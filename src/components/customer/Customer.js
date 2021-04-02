@@ -2,8 +2,8 @@ import React from "react"
 import "./Customer.css"
 
 export const CustomerCard = () => (
-    <section>
-        <h3></h3>
-        <div></div>
+    <section className="customer">
+        <h3 className="customer__name">Hannah Hall</h3>
+        <div className="customer__address">100 Infinity Way</div>
     </section>
 )
