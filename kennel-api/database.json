@@ -1,8 +1,8 @@
 {
     "animals": [
-        { "id": 1, "name": "Doodles", "breed": "Poodle"},
-        { "id": 2, "name": "Decker", "breed": "German Shepherd" },
-        { "id": 3, "name": "Esme", "breed": "Pitbull" }
+        { "id": 1, "name": "Doodles", "breed": "Poodle", "locationId": 1, "customerId": 1},
+        { "id": 2, "name": "Decker", "breed": "German Shepherd", "locationId": 2, "customerId": 1 },
+        { "id": 3, "name": "Esme", "breed": "Pitbull", "locationId": 2, "customerId": 1}
     ],
     "customers": [
         {
@@ -11,7 +11,14 @@
             "address": "7002 Chestnut Ct"
         }
     ],
-    "employees": [],
+    "employees": [
+        {
+            "id": 1,
+            "name": "Shittie Cat",
+            "locationId": 1
+            
+        }
+    ],
     "locations": [
         {
             "id": 1,
