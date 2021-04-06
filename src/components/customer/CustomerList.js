@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CustomerCard } from "./Customer";
-import { getAllCustomers, getCustomerById } from '../../modules/CustomerManager';
+import { getAllCustomers, getCustomerById, deleteCustomer } from '../../modules/CustomerManager';
 
 
 export const CustomerList = () => {
@@ -13,13 +13,18 @@ export const CustomerList = () => {
         });
     };
 
+    const handleDeleteCustomer = id => {
+        deleteCustomer(id)
+        .then(() => getAllCustomers());
+    };
+
     useEffect(() => {
         getCustomers(); 
     }, []);
 
     return ( 
         <div className="container-cards">
-            {customers.map(customer => <CustomerCard key={customer.id} customer={customer}/>)}
+            {customers.map(customer => <CustomerCard key={customer.id} customer={customer} handleDeleteCustomer={handleDeleteCustomer}/>)}
         </div>
     );
 };
