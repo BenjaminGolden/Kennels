@@ -26,3 +26,8 @@ const remoteURL = "http://localhost:5002"
         body: JSON.stringify(newAnimal)
     }).then(response => response.json())
 }
+
+export const getAnimalsByLocationId = (id) => {
+    return fetch(`${remoteURL}/animals/?locationId=${id}&_expand=customer`)
+    .then(result => result.json())
+}

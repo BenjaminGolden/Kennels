@@ -32,8 +32,22 @@
       "name": "Max",
       "breed": "pitbull",
       "locationId": 1,
-      "customerId": 1,
+      "customerId": 2,
       "id": 5
+    },
+    {
+      "name": "Roxy",
+      "breed": "Boxer",
+      "locationId": 1,
+      "customerId": 4,
+      "id": 6
+    },
+    {
+      "name": "Nala",
+      "breed": "mix",
+      "locationId": 2,
+      "customerId": 5,
+      "id": 7
     }
   ],
   "customers": [
@@ -54,6 +68,24 @@
       "name": "Useda Know",
       "address": "21 park bark dr.",
       "phoneNumber": 6154445555
+    },
+    {
+      "name": "B.J. Golden",
+      "phoneNumber": "615-268-7941",
+      "locationId": 1,
+      "address": "22 hey meow lane.",
+      "animalName": "Roxy",
+      "animalBreed": "Boxer",
+      "id": 4
+    },
+    {
+      "name": "Jason",
+      "phoneNumber": "6154545454",
+      "locationId": 1,
+      "address": "43 alfa lane",
+      "animalName": "Nala",
+      "animalBreed": "mix",
+      "id": 5
     }
   ],
   "employees": [
