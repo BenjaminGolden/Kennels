@@ -8,13 +8,14 @@ export const LocationList = () => {
     const getLocations = () => {
         return getAllLocations()
         .then(locationsFromAPI => {
+            console.log(locationsFromAPI)
             setLocations(locationsFromAPI)
         });
     };
 
     const handleDeleteLocation = id => {
         deleteLocation(id)
-        .then(getAllLocations);
+        .then(getLocations);
     };
 
     useEffect(() => {

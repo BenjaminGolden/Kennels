@@ -8,6 +8,7 @@ export const EmployeeList = () => {
     const getEmployees = () => {
         return getAllEmployees()
         .then(employeesFromAPI => {
+            console.log(employeesFromAPI)
             setEmployees(employeesFromAPI)
         });
     };

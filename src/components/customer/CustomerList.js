@@ -15,7 +15,7 @@ export const CustomerList = () => {
 
     const handleDeleteCustomer = id => {
         deleteCustomer(id)
-        .then(() => getAllCustomers());
+        .then(() => getCustomers());
     };
 
     useEffect(() => {
