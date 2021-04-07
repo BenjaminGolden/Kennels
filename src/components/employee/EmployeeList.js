@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { EmployeeCard } from './Employee'
-import { getAllEmployees, getEmployeeById } from "../../modules/EmployeeManager";
+import { getAllEmployees, getEmployeeById, deleteEmployee } from "../../modules/EmployeeManager";
 
 export const EmployeeList = () => {
     const [employees, setEmployees] = useState([]);
@@ -8,8 +8,14 @@ export const EmployeeList = () => {
     const getEmployees = () => {
         return getAllEmployees()
         .then(employeesFromAPI => {
+            console.log(employeesFromAPI)
             setEmployees(employeesFromAPI)
         });
+    };
+
+    const handleDeleteEmployee = id => {
+        deleteEmployee(id)
+        .then(() => getAllEmployees());
     };
 
     useEffect(() => {
@@ -18,7 +24,7 @@ export const EmployeeList = () => {
 
     return (
         <div className="container-cards">
-            {employees.map(employee => <EmployeeCard key={employee.id} employee={employee}/>)}
+            {employees.map(employee => <EmployeeCard key={employee.id} employee={employee} handleDeleteEmployee={handleDeleteEmployee}/>)}
         </div>
     )
 }
