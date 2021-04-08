@@ -13,7 +13,7 @@ export const AnimalForm = () => {
 		name: "",
 		breed: "",
 		locationId: 0,
-		customerId: 0
+		customerId: 0 
 	});
 
 	const [isLoading, setIsLoading] = useState(false);
@@ -49,7 +49,6 @@ export const AnimalForm = () => {
 		//load location data and setState
              getAllLocations()
             .then(locationsFromAPI => {
-                console.log(locationsFromAPI)
                 setLocations(locationsFromAPI)
             });
         
@@ -86,13 +85,13 @@ export const AnimalForm = () => {
 			<h2 className="animalForm__title">New Animal</h2>
 			<fieldset>
 				<div className="form-group">
-					<label htmlFor="name">Animal name:</label>
+					<label htmlFor="name">Animal name: </label>
 					<input type="text" id="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Animal name" value={animal.name} />
 				</div>
 			</fieldset>
 			<fieldset>
 				<div className="form-group">
-					<label htmlFor="breed">Animal breed:</label>
+					<label htmlFor="breed">Animal breed: </label>
 					<input type="text" id="breed" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Animal breed" value={animal.breed} />
 				</div>
 			</fieldset>
@@ -120,6 +119,12 @@ export const AnimalForm = () => {
 							</option>
 						))}
 					</select>
+                    {/* <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="name">Customer name: </label>
+                            <input type="text" id="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="customer name" value={customer.name} />
+                        </div>
+                    </fieldset> */}
 				</div>
 			</fieldset>
 			<button className="btn btn-primary"
