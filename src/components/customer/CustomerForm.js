@@ -9,8 +9,8 @@ export const CustomerForm = () => {
 
     const [customer, setCustomer] = useState({
         name: "",
-        phoneNumber: 0,
-        locationId: 0
+        phoneNumber: "",
+        email: ""
         
     });
 
@@ -47,17 +47,10 @@ export const CustomerForm = () => {
 
   const handleClickSaveCustomer = (event) => {
       event.preventDefault()
-
-      const locationId = customer.locationId
-      const animalId = customer.animalId
-      
-      if (locationId === 0 || animalId === 0 ) {
-          window.alert("please select a location and an animal")          
-      } else {
           addCustomer(customer)
-            .then(() => history.push("./customers"))
-      }
-  }
+            .then(() => history.push("/customers"))
+      } 
+  
 
   return (
     <form className="customerForm">
@@ -80,31 +73,14 @@ export const CustomerForm = () => {
             <input type="text" id="phoneNumber" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="phone number" value={customer.phoneNumber} />
         </div>
     </fieldset>
-    <fieldset>
-        <div className="form-group">
-            <label htmlFor="location">Assign to location: </label>
-            <select value={customer.locationId} name="locationId" id="locationId" onChange={handleControlledInputChange} className="form-control" >
-                <option value="0">Select a location</option>
-                {locations.map(l => (
-                    <option key={l.id} value={l.id}>
-                        {l.name}
-                    </option>
-                ))}
-            </select>
-        </div>
-    </fieldset>
+
     <fieldset>
 				<div className="form-group">
-					<label htmlFor="name">Animal name: </label>
-					<input type="text" id="animalName" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Animal name" value={customer.animalName} />
+					<label htmlFor="name">Customer email: </label>
+					<input type="text" id="email" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="email" value={customer.email} />
 				</div>
 			</fieldset>
-			<fieldset>
-				<div className="form-group">
-					<label htmlFor="breed">Animal breed: </label>
-					<input type="text" id="animalBreed" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Animal breed" value={customer.animalBreed} />
-				</div>
-			</fieldset>
+
     {/* <fieldset>
         <div className="form-group">
             <label htmlFor="animalId">Animal: </label>

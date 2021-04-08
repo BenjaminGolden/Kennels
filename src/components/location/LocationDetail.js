@@ -15,14 +15,14 @@ export const LocationDetail = () => {
     useEffect(() => {
         getLocationById(locationId)
         .then(location => {
-            getAnimalsByLocationId(locationId)
-            .then(animals => {
-                console.log(animals)
-                setAnimals(animals)
+            // getAnimalsByLocationId(locationId)
+            // .then(animals => {
+            //     console.log(animals)
+            //     setAnimals(animals)
                 setLocation(location)
                 setIsLoading(false);
 
-                });
+                // });
         });
     }, [locationId]);
 
@@ -33,13 +33,23 @@ export const LocationDetail = () => {
         );
     };
 
+    // const finalCustomersArray = () => {
+    //     const customersArray = location.customers?.map(customer => customer);
+    //     console.log(location)
+    //     const removeDuplicateCustomers = new Set(customersArray);
+    //      const finalArray = [...removeDuplicateCustomers];
+    //      return finalArray.join(", ");
+    //     }
+    //     console.log(finalCustomersArray())
+
         //need to display animals and customers data in the details.
+        
     return (
         <section className="card">
             <h3 className="location__name">Name: {location.name}</h3>
             <div className="location__address">Address: {location.address}</div>
             <div className="location__animals">Animals: {location.animals?.map(animal => animal.name).join(", ")}</div>
-            <div className="location__customers">Customers: {animals.map(animal => animal.customer.name).join(", ")} </div>
+            {/* <div className="location__customers">Customers: {location.customers?.map(customer => customer.name).join(", ")} </div> */}
             <button type="delete" disabled={isLoading} onClick={handleDelete}>Discharge</button>
         </section>
     )

@@ -21,7 +21,7 @@ export const CustomerDetail = () => {
             //     name: customer.name,
             //     address: customer.address,
             //     phoneNumber: customer.phoneNumber,
-            //     animals: customer.animals
+            //     animals: customer.animals 
             // })
         });
       }, [customerId]);
@@ -33,14 +33,19 @@ export const CustomerDetail = () => {
           );
       };
 
+
+
 return (
     <section className="card">
         <h3 className="customer__name">Name: {customer.name}</h3>
         <div className="customer__address">Address: {customer.address}</div>
-        <div className="customer__phoneNumber">Phone Number: {customer.phoneNumber}</div>
+        <div className="customer__phoneNumber">Phone Number: {customer.phoneNumber}</div>   
         <div className="customer__animals">Animals: {customer.animals?.map(animal => animal.name).join(", ")}</div>
         <button type="delete" disabled={isLoading} onClick={handleDelete}>Discharge</button>
     </section>
 
     );
 }
+
+{/* <div>{</div> */}
+//if I want to use set to remove duplicates, how do I use it on line 40?

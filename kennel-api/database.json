@@ -2,90 +2,120 @@
   "animals": [
     {
       "id": 1,
-      "name": "Gus",
+      "name": "Gustavo ",
       "breed": "shephard",
       "locationId": 1,
-      "customerId": 1
+      "customerId": 5
     },
     {
       "id": 2,
-      "name": "Cam",
+      "name": "Cam Bam",
       "breed": "mix",
       "locationId": 2,
-      "customerId": 1
-    },
-    {
-      "id": 3,
-      "name": "Shittie",
-      "breed": "cat",
-      "locationId": 2,
-      "customerId": 1
-    },
-    {
-      "name": "Xander",
-      "breed": "Cani Corso",
-      "locationId": 1,
-      "customerId": 3,
-      "id": 4
+      "customerId": 2
     },
     {
       "name": "Max",
       "breed": "pitbull",
+      "locationId": 2,
+      "customerId": 3,
+      "id": 3
+    },
+    {
+      "name": "Xander",
+      "breed": "Cani Corso",
+      "locationId": 2,
+      "customerId": 4,
+      "id": 4
+    },
+    {
+      "name": "Nala",
+      "breed": "mix",
       "locationId": 1,
-      "customerId": 2,
+      "customerId": 3,
       "id": 5
+    },
+    {
+      "name": "ShittieCat",
+      "breed": "cat",
+      "locationId": 2,
+      "customerId": 5,
+      "id": 6
+    },
+    {
+      "name": "millie",
+      "breed": "cat",
+      "locationId": 2,
+      "customerId": 6,
+      "id": 7
     },
     {
       "name": "Roxy",
       "breed": "Boxer",
       "locationId": 1,
-      "customerId": 4,
-      "id": 6
-    },
-    {
-      "name": "Nala",
-      "breed": "mix",
-      "locationId": 2,
-      "customerId": 5,
-      "id": 7
+      "customerId": 1,
+      "id": 8
     }
   ],
   "customers": [
     {
       "id": 1,
-      "name": "Ida Know",
-      "address": "21 park bark dr.",
-      "phoneNumber": 6154445555
-    },
-    {
-      "id": 2,
-      "name": "Already Know",
-      "address": "21 park bark dr.",
-      "phoneNumber": 6154445555
-    },
-    {
-      "id": 3,
-      "name": "Useda Know",
-      "address": "21 park bark dr.",
-      "phoneNumber": 6154445555
-    },
-    {
       "name": "B.J. Golden",
-      "phoneNumber": "615-268-7941",
-      "locationId": 1,
       "address": "22 hey meow lane.",
-      "animalName": "Roxy",
-      "animalBreed": "Boxer",
-      "id": 4
+      "phoneNumber": "4443334444",
+      "email": "B@me.com"
+    },
+    {
+      "name": "Martyna",
+      "phoneNumber": "3334443333",
+      "email": "m@m.com",
+      "address": "22 hey meow lane.",
+      "id": 2
     },
     {
       "name": "Jason",
-      "phoneNumber": "6154545454",
-      "locationId": 1,
+      "phoneNumber": "5554445555",
+      "email": "J@j3.com",
+      "address": "11 hey meow lane",
+      "id": 3
+    },
+    {
+      "name": "brandon",
+      "phoneNumber": "6665556666",
+      "email": "b@b2.com",
       "address": "43 alfa lane",
-      "animalName": "Nala",
-      "animalBreed": "mix",
+      "id": 4
+    },
+    {
+      "name": "Jerry",
+      "phoneNumber": "2233324444",
+      "email": "j@j2.com",
+      "address": "55 hey meow lane",
       "id": 5
+    },
+    {
+      "name": "Jeff",
+      "phoneNumber": "9998887777",
+      "email": "j@j.com",
+      "address": "11 right meow dr.",
+      "id": 6
+    },
+    {
+      "name": "Ben",
+      "phoneNumber": "3334444444",
+      "email": "ben@me.com",
+      "address": "77 I'm drinkin meow road",
+      "id": 7
+    },
+    {
+      "email": "4@34.com",
+      "name": "Harry Animal",
+      "id": 8
+    },
+    {
+      "email": "2@2.com",
+      "name": "Harry  Animal",
+      "id": 9
     }
   ],
   "employees": [

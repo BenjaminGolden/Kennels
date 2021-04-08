@@ -1,5 +1,5 @@
-import React from "react"
-import { Route } from "react-router-dom"
+import React, { useState } from "react";
+import { Route, } from "react-router-dom"
 import { Home } from "./Home"
 import { AnimalList } from "./animal/AnimalList"
 import { CustomerList } from "./customer/CustomerList"
@@ -11,25 +11,38 @@ import { EmployeeDetail } from "./employee/EmployeeDetail";
 import { LocationDetail } from "./location/LocationDetail"
 import { AnimalForm } from "./animal/AnimalForm"
 import { CustomerForm } from "./customer/CustomerForm"
-
-
+import { Redirect }from "react-router-dom"
+import {Login} from "../components/auth/Login"
+import {Register} from "../components/auth/Register"
+import { AnimalEditForm } from "./animal/AnimalEditForm"
+import {CustomerEditForm} from "./customer/CustomerEditForm"
 
 export const ApplicationViews = () => {
+
+    const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("kennel_customer") !== null)
+
+    const setAuthUser = (user) => {
+        sessionStorage.setItem("kennel_customer", JSON.stringify(user))
+        setIsAuthenticated(sessionStorage.getItem("kennel_customer") !== null)
+    }
     return (
         <>
-            {/* Render the location list when http://localhost:3000/ */}
-            <Route exact path="/">
-                <Home />
-            </Route>
-
             {/* Render the animal list when http://localhost:3000/animals */}
             {/* Make sure you add the `exact` attribute here */}
             <Route exact path="/animals">
-            <AnimalList />
+                {isAuthenticated ? <AnimalList /> : <Redirect to="/login" />}
             </Route>
 
-            <Route path="/animals/:animalId(\d+)">
-            <AnimalDetail />
+            <Route path="/login">
+                <Login setAuthUser={setAuthUser}/>
+            </Route>
+
+            <Route path="/register">
+                <Register setAuthUser={setAuthUser}/>
+            </Route>
+            {/* Render the location list when http://localhost:3000/ */}
+            <Route exact path="/">
+                <Home />
             </Route>
 
             {/*
@@ -41,17 +54,30 @@ export const ApplicationViews = () => {
             http://localhost:3000/animals/jack
             */}
 
+            <Route exact path="/animals/:animalId(\d+)">
+            <AnimalDetail />
+            </Route>
+
+            <Route exact path="/animals/:animalId(\d+)/edit">
+             {isAuthenticated ? <AnimalEditForm /> : <Redirect to="/login" />}
+            </Route>
+
             <Route path="/animals/create">
                 <AnimalForm />
             </Route>
 
             <Route exact path="/customers">
-                <h2>Customer:</h2>
-                <CustomerList />
+                {isAuthenticated ?  <CustomerList /> : <Redirect to="/login"/>}
+                
             </Route>
 
-            <Route path="/customers/:customerId(\d+)">
+            <Route exact path="/customers/:customerId(\d+)">
             <CustomerDetail />
+            </Route>
+
+            
+            <Route exact path="/customers/:customerId(\d+)/edit">
+             {isAuthenticated ? <CustomerEditForm /> : <Redirect to="/login" />}
             </Route>
 
             <Route path="/customers/create">
