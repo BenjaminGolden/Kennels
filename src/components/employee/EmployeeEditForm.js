@@ -1,49 +1,50 @@
 import React, { useState, useEffect } from "react"
-import "./CustomerForm.css"
-import { updateCustomer, getCustomerById } from "../../modules/CustomerManager";
-import { useParams, useHistory} from "react-router-dom";
+import "./EmployeeForm.css"
+import { updateEmployee, getEmployeeById } from "../../modules/EmployeeManager"
+import { useParams, useHistory } from "react-router-dom";
 
-export const CustomerEditForm = () => {
-    const [customer, setCustomer] = useState({})
+export const EmployeeEditForm = () => {
+    const [employee, setEmployee] = useState({});
     const [isLoading, setIsLoading] = useState(false);
 
-    const {customerId} = useParams();
+    const {employeeId} = useParams();
     const history = useHistory();
 
     const handleFieldChange = evt => {
-        const stateToChange = { ...customer };
+        const stateToChange = { ...employee };
         stateToChange[evt.target.id] = evt.target.value;
-        setCustomer(stateToChange);
+        setEmployee(stateToChange);
     };
 
-    const updateExistingCustomer = evt => {
+    const updateExistingEmployee = (evt) => {
         evt.preventDefault()
         setIsLoading(true);
 
-        const editedCustomer = {
-            id: customerId,
-            name: customer.name,
-            email: customer.email,
-            address: customer.address,
-            phoneNumber: customer.phoneNumber
+        const editedEmployee = {
+            id: employeeId,
+            name: employee.name,
+            email: employee.email,
+            address: employee.address,
+            phoneNumber:employee.phoneNumber
+
         };
 
-        updateCustomer(editedCustomer)
-        .then(() => history.push("/customers")
+        updateEmployee(editedEmployee)
+        .then(() => history.push("/employees")
         )
     }
 
     useEffect(() => {
-        getCustomerById(customerId)
-            .then(customer => {
-                setCustomer(customer);
+        getEmployeeById(employeeId)
+            .then(employee => {
+                setEmployee(employee);
                 setIsLoading(false);
             });
     }, []);
 
     return (
-        <>
-    <form>
+        
+            <form>
         <fieldset>
           <div className="formgrid">
             <input
@@ -52,9 +53,9 @@ export const CustomerEditForm = () => {
               className="form-control"
               onChange={handleFieldChange}
               id="name"
-              value={customer.name}
+              value={employee.name}
             />
-            <label htmlFor="name">Customer name</label>
+            <label htmlFor="name">Employee name</label>
 
             <input
               type="text"
@@ -62,37 +63,39 @@ export const CustomerEditForm = () => {
               className="form-control"
               onChange={handleFieldChange}
               id="email"
-              value={customer.email}
+              value={employee.email}
             />
-            <label htmlFor="email">Customer email</label>
-            <input
-              type="text"
-              required
-              className="form-control"
-              onChange={handleFieldChange}
-              id="phoneNumber"
-              value={customer.phoneNumber}
-            />
-            <label htmlFor="email">Customer phone number</label>
+            <label htmlFor="email">Employee email</label>
+
             <input
               type="text"
               required
               className="form-control"
               onChange={handleFieldChange}
               id="address"
-              value={customer.address}
+              value={employee.address}
             />
-            <label htmlFor="email">Customer address</label>
+            <label htmlFor="email">Employee address</label>
+            
+            <input
+              type="text"
+              required
+              className="form-control"
+              onChange={handleFieldChange}
+              id="phoneNumber"
+              value={employee.phoneNumber}
+            />
+            <label htmlFor="email">Employee phone number</label>
           </div>
           <div className="alignRight">
             <button
               type="button" disabled={isLoading}
-              onClick={updateExistingCustomer}
+              onClick={updateExistingEmployee}
               className="btn btn-primary"
             >Submit</button>
           </div>
         </fieldset>
     </form>
-        </>
+      
     )
 }

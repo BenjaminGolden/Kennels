@@ -76,24 +76,11 @@ export const CustomerForm = () => {
 
     <fieldset>
 				<div className="form-group">
-					<label htmlFor="name">Customer email: </label>
+					<label htmlFor="email">Customer email: </label>
 					<input type="text" id="email" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="email" value={customer.email} />
 				</div>
 			</fieldset>
 
-    {/* <fieldset>
-        <div className="form-group">
-            <label htmlFor="animalId">Animal: </label>
-            <select value={customer.animalId} name="animal" id="animalId" onChange={handleControlledInputChange} className="form-control" >
-                <option value="0">Select a animal</option>
-                {animals.map(a => (
-                    <option key={a.id} value={a.id}>
-                        {a.name}
-                    </option>
-                ))}
-            </select>
-        </div>
-    </fieldset> */}
     <button className="btn btn-primary"
         onClick={handleClickSaveCustomer}>
         Save customer
