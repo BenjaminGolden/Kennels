@@ -14,6 +14,7 @@ export const EmployeeDetail = () => {
     useEffect(() => {
         getEmployeeById(employeeId)
         .then(employee => {
+            console.log(employee)
             setEmployee(employee)
             setIsLoading(false);
         });
@@ -32,7 +33,7 @@ export const EmployeeDetail = () => {
             <h2>Employee Details</h2>
             <h3 className="employee__name">Name: {employee.name}</h3>
             <div className="employee__location">Location: {employee.location?.name}</div>
-            <div className="employee__location--address">Address: {employee.location?.address}</div>
+            <div className="employee__phoneNumber">Phone number: {employee.phoneNumber}</div>
             <button type="button" disabled={isLoading} onClick={handleDelete}>Discharge</button>
         </section>
     );

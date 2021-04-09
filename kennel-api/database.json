@@ -5,7 +5,7 @@
       "name": "Gustavo ",
       "breed": "shephard",
       "locationId": 1,
-      "customerId": 5
+      "customerId": 2
     },
     {
       "id": 2,
@@ -48,23 +48,9 @@
       "locationId": 2,
       "customerId": 6,
       "id": 7
-    },
-    {
-      "name": "Roxy",
-      "breed": "Boxer",
-      "locationId": 1,
-      "customerId": 1,
-      "id": 8
     }
   ],
   "customers": [
-    {
-      "id": 1,
-      "name": "B.J. Golden",
-      "address": "22 hey meow lane.",
-      "phoneNumber": "4443334444",
-      "email": "B@me.com"
-    },
     {
       "name": "Martyna",
       "phoneNumber": "3334443333",
@@ -108,21 +94,27 @@
       "id": 7
     },
     {
-      "email": "4@34.com",
-      "name": "Harry Animal",
-      "id": 8
-    },
-    {
       "email": "2@2.com",
-      "name": "Harry  Animal",
-      "id": 9
+      "name": "b a",
+      "id": 8
     }
   ],
   "employees": [
     {
-      "id": 1,
-      "name": "Larry",
-      "locationId": 2
+      "name": "Goose",
+      "email": "3@3.com",
+      "address": "11 hey meow lane",
+      "phoneNumber": "615-268-7941",
+      "locationId": 2,
+      "id": 4
+    },
+    {
+      "name": "LD",
+      "email": "ld@ldcc.com",
+      "address": "43 alfa lane",
+      "phoneNumber": "5553338727",
+      "locationId": 1,
+      "id": 5
     }
   ],
   "locations": [
